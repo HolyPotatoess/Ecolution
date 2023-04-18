@@ -1,21 +1,17 @@
 package my.edu.tarumt.ecolution.register
 
-import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.Color.LTGRAY
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Trace.isEnabled
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Patterns.*
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -23,14 +19,13 @@ import com.google.firebase.database.FirebaseDatabase
 import my.edu.tarumt.ecolution.R
 import my.edu.tarumt.ecolution.databinding.ActivityRegisterBinding
 import my.edu.tarumt.ecolution.login.LoginActivity
-import my.edu.tarumt.ecolution.register.TermsAndConditionsActivity
 import java.util.*
 import java.util.regex.Pattern
 import kotlin.collections.HashMap
 
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var  binding: ActivityRegisterBinding
+    private lateinit var binding: ActivityRegisterBinding
 
     //Firebase Auth
     private lateinit var firebaseAuth: FirebaseAuth

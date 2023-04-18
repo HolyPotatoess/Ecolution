@@ -10,7 +10,6 @@ import android.util.Patterns
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
-import my.edu.taruc.ecolutionapp.login.ForgetPasswordActivity
 import my.edu.tarumt.ecolution.MainMenuActivity
 import my.edu.tarumt.ecolution.R
 import my.edu.tarumt.ecolution.databinding.ActivityLoginBinding
