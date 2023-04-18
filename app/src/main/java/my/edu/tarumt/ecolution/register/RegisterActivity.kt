@@ -1,17 +1,22 @@
 package my.edu.tarumt.ecolution.register
 
+
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Color.LTGRAY
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Trace.isEnabled
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Patterns.*
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -23,9 +28,11 @@ import java.util.*
 import java.util.regex.Pattern
 import kotlin.collections.HashMap
 
+
+
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityRegisterBinding
+    private lateinit var  binding: ActivityRegisterBinding
 
     //Firebase Auth
     private lateinit var firebaseAuth: FirebaseAuth
@@ -52,7 +59,6 @@ class RegisterActivity : AppCompatActivity() {
         binding= ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
-        firebaseUser = firebaseAuth.currentUser!!
 
         //hide action bar
         supportActionBar?.hide()
@@ -261,7 +267,7 @@ class RegisterActivity : AppCompatActivity() {
                 //user info save, open user dash board
                 progressDialog.dismiss()
                 Toast.makeText(this, "Account created...", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this@RegisterActivity, LoginActivity::class.java ))
+                startActivity(Intent(this, LoginActivity::class.java ))
                 finish()
             }
             .addOnFailureListener { e->
