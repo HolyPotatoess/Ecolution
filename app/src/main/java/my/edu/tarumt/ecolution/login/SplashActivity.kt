@@ -1,10 +1,10 @@
-package my.edu.tarumt.ecolution
+package my.edu.tarumt.ecolution.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import my.edu.tarumt.ecolution.login.LoginActivity
+import my.edu.tarumt.ecolution.R
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

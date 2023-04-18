@@ -12,16 +12,25 @@
         android:theme="@style/Theme.Ecolution"
         tools:targetApi="31">
         <activity
-            android:name=".ranking.RankingActivity"
+            android:name=".MainMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".register.TermsAndConditionsActivity"
             android:exported="false" />
         <activity
             android:name=".register.RegisterActivity"
             android:exported="false" />
         <activity
+            android:name=".login.ForgetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ranking.RankingActivity"
+            android:exported="false" />
+        <activity
             android:name=".login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".login.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
