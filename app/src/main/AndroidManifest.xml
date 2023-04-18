@@ -15,6 +15,9 @@
             android:name=".ranking.RankingActivity"
             android:exported="false" />
         <activity
+            android:name=".register.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".login.LoginActivity"
             android:exported="false" />
         <activity
