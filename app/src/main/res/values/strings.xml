@@ -32,6 +32,29 @@
     <string name="register_t_c_1_2">1.2 The Services include an platform service that provides a place and opportunity for recycling practices between Recycling Station and the users. Ecolution reserves the right to remove any Content or information uploaded by you on the application.</string>
     <string name="register_t_c_1_1">1.1 Welcome to Ecolution. Please read the following Terms of Service carefully before using this application or registering an Ecolution account so that you are aware of your legal rights and obligations with respect to Ecolution.</string>
     <string name="register_t_c_1">1. Introduction</string>
+    <string name="global_ranking_title">Global Ranking</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="title_ranking">Ranking</string>
+    <string name="title_user_profile">User Profile</string>
+    <string name="title_voucher">Voucher</string>
+    <string name="title_reward">Reward</string>
+    <string name="title_home">Home</string>
 
+    <!-- About Us -->
+    <string name="title_aboutUs">About Us</string>
+    <string name="aboutUs_WWD">What We do</string>
+    <string name="aboutUsSentence1">Increase awareness of our community</string>
+    <string name="aboutUsSentence2">Promote conversation of Mother Earth</string>
+    <string name="aboutUsSentence3">Convey severity of destroying our ecosystem</string>
+    <string name="aboutUsSentence4">Spread the beauty of nature</string>
+    <string name="title_SocialMedia">Social Media</string>
+    <string name="socialMedia_facebook">\u0040Ecolution</string>
+    <string name="socialMedia_tiktok">\u0040Ecolution3R</string>
+    <string name="socialMedia_instagram">\u0040Ecolution.3R</string>
+
+    <!-- Article -->
+    <string name="read_more">Read More...</string>
+    <string name="article1">Haze is traditionally an atmospheric phenomenon in which dust, smoke, and other dry particulates obscure the clarity of the sky. The World Meteorological Organization...</string>
 </resources>
