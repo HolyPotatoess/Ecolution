@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aboutus.AboutUsFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ecolution"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAboutUsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/aboutUs_WWD"
+        android:textColor="@color/main_green"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+    <TextView
+        android:id="@+id/textViewAboutUsSentence1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="58dp"
+        android:text="@string/aboutUsSentence1"
+        android:textColor="@color/main_green"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsTitle" />
+
+    <TextView
+        android:id="@+id/textViewAboutUsSentence2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="56dp"
+        android:text="@string/aboutUsSentence2"
+        android:textColor="@color/main_green"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsSentence1" />
+
+    <TextView
+        android:id="@+id/textViewAboutUsSentence3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="9dp"
+        android:text="@string/aboutUsSentence3"
+        android:textColor="@color/main_green"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsSentence2" />
+
+    <TextView
+        android:id="@+id/textViewAboutUsSentence4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="139dp"
+        android:text="@string/aboutUsSentence4"
+        android:textColor="@color/main_green"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsSentence3" />
+
+    <TextView
+        android:id="@+id/textViewSocialMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="266dp"
+        android:text="@string/title_SocialMedia"
+        android:textColor="@color/main_green"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsSentence4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <ImageButton
+        android:id="@+id/imageButtonFacebook"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="115dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/facebook"
+        android:contentDescription="Facebook Button"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonTiktok"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSocialMedia" />
+
+    <ImageButton
+        android:id="@+id/imageButtonTiktok"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="171dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tiktok"
+        android:contentDescription="TikTok Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewSocialMedia"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSocialMedia" />
+
+    <ImageButton
+        android:id="@+id/imageButtonInstagram"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/instagram"
+        android:contentDescription="Instagram Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonTiktok"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSocialMedia" />
+
+    <TextView
+        android:id="@+id/textViewFacebookAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/socialMedia_facebook"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonFacebook"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonFacebook"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonFacebook" />
+
+    <TextView
+        android:id="@+id/textViewTiktokAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/socialMedia_tiktok"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonTiktok"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonTiktok"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonTiktok" />
+
+    <TextView
+        android:id="@+id/textViewInstagramAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/socialMedia_instagram"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonInstagram"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonInstagram"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonInstagram" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_article"
+        android:icon="@drawable/home"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/nav_aboutUs"
+        android:icon="@drawable/aboutus"
+        android:title="@string/title_aboutUs" />
+
+    <item
+        android:id="@+id/navigation_reward"
+        android:icon="@drawable/gift_box_1"
+        android:title="@string/title_reward" />
+
+    <item
+        android:id="@+id/nav_ranking"
+        android:icon="@drawable/ranking_1"
+        android:title="@string/title_ranking" />
+
+    <item
+        android:id="@+id/nav_user"
+        android:icon="@drawable/user_1"
+        android:title="@string/title_user_profile" />
+
+</menu>
