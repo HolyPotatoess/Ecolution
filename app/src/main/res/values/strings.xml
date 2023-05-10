@@ -57,4 +57,28 @@
     <!-- Article -->
     <string name="read_more">Read More...</string>
     <string name="article1">Haze is traditionally an atmospheric phenomenon in which dust, smoke, and other dry particulates obscure the clarity of the sky. The World Meteorological Organization...</string>
+
+    <!-- Update Profile -->
+    <string name="update_bttn_title2">Update Your Profile Info</string>
+    <string name="update_bio_hint">Your Bio Information</string>
+    <string name="edit_profile_bttn">Edit Profile</string>
+    <string name="current_points_title">Total Points</string>
+    <string name="logout_title">Logout</string>
+
+    <!-- User Profile -->
+    <string name="username_s">%s</string>
+    <string name="email">Email</string>
+    <string name="email_s">%s</string>
+    <string name="nationality_s">%s</string>
+    <string name="gender">Gender</string>
+    <string name="gender_s">%s</string>
+    <string name="phone_no">Phone No</string>
+    <string name="phone_no_s">%s</string>
+    <string name="user_bio_title">BIO</string>
+    <string name="user_bio">Your Bio information</string>
+    <string name="user_ranking_point"><![CDATA[Ranking & Point]]></string>
+    <string name="current_ranking_title">Current Ranking</string>
+    <string name="user_ranking_point_s">%s th</string>
+    <string name="current_ranking_title_s">%s points</string>
+    <string name="naviBar_rank_title">Ranking</string>
 </resources>
