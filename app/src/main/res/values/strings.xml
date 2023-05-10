@@ -32,7 +32,7 @@
     <string name="register_t_c_1_2">1.2 The Services include an platform service that provides a place and opportunity for recycling practices between Recycling Station and the users. Ecolution reserves the right to remove any Content or information uploaded by you on the application.</string>
     <string name="register_t_c_1_1">1.1 Welcome to Ecolution. Please read the following Terms of Service carefully before using this application or registering an Ecolution account so that you are aware of your legal rights and obligations with respect to Ecolution.</string>
     <string name="register_t_c_1">1. Introduction</string>
-
+    <string name="global_ranking_title">Global Ranking</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -57,23 +57,4 @@
     <!-- Article -->
     <string name="read_more">Read More...</string>
     <string name="article1">Haze is traditionally an atmospheric phenomenon in which dust, smoke, and other dry particulates obscure the clarity of the sky. The World Meteorological Organization...</string>
-
-    <!-- User Profile -->
-    <string name="email">Email</string>
-    <string name="gender">Gender</string>
-    <string name="phone_no">Phone No</string>
-    <string name="user_bio_title">BIO</string>
-    <string name="user_ranking_point"><![CDATA[Ranking & Point]]></string>
-    <string name="current_points_title">Total Points</string>
-    <string name="current_ranking_title">Current Ranking</string>
-    <string name="edit_profile_bttn">Edit Profile</string>
-
-    <string name="update_str">Update Information</string>
-    <string name="update_bttn_title2">Update Your Profile Info</string>
-    <string name="update_bio_hint">Your Bio Information</string>
-    <string name="logout_title">Logout</string>
-
-    <!-- Ranking -->
-    <string name="global_ranking_title">Global Ranking</string>
-    
 </resources>

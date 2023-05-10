@@ -201,8 +201,8 @@ class RegisterActivity : AppCompatActivity() {
         {
             Toast.makeText(this, "Please Choose Your Nationality", Toast.LENGTH_SHORT).show()
         }
-        else if(!mobileValidation(phoneNumber))
-            Toast.makeText(this, "Invalid Phone Number Pattern", Toast.LENGTH_SHORT).show()
+        //else if(!mobileValidation(phoneNumber))
+            //Toast.makeText(this, "Invalid Phone Number Pattern", Toast.LENGTH_SHORT).show()
         else {
             createUserAccount()
         }
