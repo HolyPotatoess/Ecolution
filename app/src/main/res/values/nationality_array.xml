@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="nationality_array">
+        <item>Brunei</item>
+        <item>Malaysia</item>
+        <item>Indonesia</item>
+        <item>Singapore</item>
+        <item>Thailand</item>
+    </string-array>
+</resources>
