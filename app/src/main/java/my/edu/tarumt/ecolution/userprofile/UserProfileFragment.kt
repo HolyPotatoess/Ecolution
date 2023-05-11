@@ -34,19 +34,16 @@ class UserProfileFragment : Fragment() {
     private lateinit var binding: FragmentUserProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentUserProfileBinding.inflate(layoutInflater)
         Log.d("msg", "loaded")
     }
 
-    @SuppressLint("DetachAndAttachSameFragment")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_user_profile, container, false)
+        binding = FragmentUserProfileBinding.inflate(inflater, container, false)
         firebaseAuth = FirebaseAuth.getInstance()
-        val updateBttn = view.findViewById<Button>(R.id.update_bttn)
         val updateProfileFragment = UpdateProfileFragment()
         val userProfileFragment = UserProfileFragment()
-        updateBttn.setOnClickListener {
+        binding.updateBttn.setOnClickListener {
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.fl_wrapper, updateProfileFragment)
             transaction.commit()
@@ -55,43 +52,33 @@ class UserProfileFragment : Fragment() {
             fc?.replace(R.id.navigation_user, updateProfileFragment)
             fc?.commit()*/
         }
-        getDatabaseData(view)
+        getDatabaseData(binding)
 
-        view.findViewById<Button>(R.id.change_profile_pic_bttn).setOnClickListener {
+        binding.changeProfilePicBttn.setOnClickListener {
             pickImageGallery()
         }
 
-        view.findViewById<Button>(R.id.logout_bttn).setOnClickListener{
+        binding.logoutBttn.setOnClickListener{
             startActivity(Intent(this.requireContext(), LoginActivity::class.java))
         }
 
         // Plan B
-        /*view.findViewById<Button>(R.id.refresh_bttn).setOnClickListener {
+        binding.refreshBttn.setOnClickListener {
             parentFragmentManager.beginTransaction().apply {
                 remove(userProfileFragment)
                 replace(R.id.fl_wrapper, userProfileFragment)
                 commit()
             }
-        }*/
-
-        view.findViewById<Button>(R.id.refresh_bttn).setOnClickListener {
-            parentFragmentManager.beginTransaction().
-            detach(this).attach(this).commit()
         }
 
-        return view
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+        return binding.root
     }
 
     companion object {
         const val IMAGE_REQUEST_CODE = 100
     }
 
-    private fun getDatabaseData(view: View){
+    private fun getDatabaseData(binding: FragmentUserProfileBinding){
 
         val database = FirebaseDatabase.getInstance().getReference("Users")
         val storageRef = Firebase.storage.getReference("Users")
@@ -104,19 +91,19 @@ class UserProfileFragment : Fragment() {
             val dtGender = it.child("gender").value
             val dtTotalPoint = it.child("totalPoints").value
             val dtRank = it.child("Rank").value
-            view.findViewById<TextView>(R.id.profile_username).text = dtUsername.toString()
-            view.findViewById<TextView>(R.id.profile_email).text = dtEmail.toString()
-            view.findViewById<TextView>(R.id.profile_nationality).text = dtNationality.toString()
-            view.findViewById<TextView>(R.id.profile_phoneNo).text = dtPhoneNo.toString()
-            view.findViewById<TextView>(R.id.bio_info).text = dtBioInfo.toString()
-            view.findViewById<TextView>(R.id.profile_gender).text = dtGender.toString()
-            view.findViewById<TextView>(R.id.profile_points).text = dtTotalPoint.toString() + " pts"
-            view.findViewById<TextView>(R.id.profile_rank).text = "No. " + dtRank.toString()
+            binding.profileUsername.text = dtUsername.toString()
+            binding.profileEmail.text = dtEmail.toString()
+            binding.profileNationality.text = dtNationality.toString()
+            binding.profilePhoneNo.text = dtPhoneNo.toString()
+            binding.bioInfo.text = dtBioInfo.toString()
+            binding.profileGender.text = dtGender.toString()
+            binding.profilePoints.text = dtTotalPoint.toString() + " pts"
+            binding.profileRank.text = "No. " + dtRank.toString()
         }
 
         storageRef.child(firebaseAuth.uid!!).downloadUrl.addOnSuccessListener { Uri ->
             val imageUri = Uri.toString()
-            val profilePicView = view.findViewById<CircleImageView>(R.id.profile_image)
+            val profilePicView = binding.profileImage
             Glide.with(this)
                 .load(imageUri)
                 .into(profilePicView)
@@ -133,7 +120,7 @@ class UserProfileFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == IMAGE_REQUEST_CODE && resultCode == Activity.RESULT_OK){
-            view?.findViewById<ImageView>(R.id.profile_image)?.setImageURI(data?.data)
+            binding.profileImage.setImageURI(data?.data)
         }
         val _picUri = data?.data
         if (_picUri != null) {

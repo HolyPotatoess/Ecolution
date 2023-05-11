@@ -34,7 +34,7 @@ class MainMenuActivity : AppCompatActivity() {
                 (
                 R.id.nav_article,
                 R.id.nav_aboutUs,
-                R.id.navigation_reward,
+                R.id.nav_reward,
                 R.id.nav_ranking,
                 R.id.nav_user
             )

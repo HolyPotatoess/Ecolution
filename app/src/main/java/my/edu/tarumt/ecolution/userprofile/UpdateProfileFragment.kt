@@ -12,11 +12,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.auth.User
 import my.edu.tarumt.ecolution.R
+import my.edu.tarumt.ecolution.databinding.FragmentUpdateProfileBinding
+import my.edu.tarumt.ecolution.databinding.FragmentUserProfileBinding
 
 class UpdateProfileFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var nationalitySpinner: Spinner
     private lateinit var selectedNational: String
+    private lateinit var binding: FragmentUpdateProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         firebaseAuth = FirebaseAuth.getInstance()
@@ -25,26 +28,21 @@ class UpdateProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        binding = FragmentUpdateProfileBinding.inflate(inflater, container, false)
         val database = FirebaseDatabase.getInstance().getReference("Users")
         database.child(firebaseAuth.uid!!).get().addOnSuccessListener {
             val dtUsername = it.child("name").value
             val dtBioInfo = it.child("bioInfo").value
             val dtPhoneNo = it.child("phoneNumber").value
-            view?.findViewById<TextInputEditText>(R.id.update_username)?.setText("$dtUsername")
-            view?.findViewById<TextInputEditText>(R.id.update_bioInfo)?.setText("$dtBioInfo")
-            view?.findViewById<TextInputEditText>(R.id.update_phoneNo)?.setText("$dtPhoneNo")
+            binding.updateUsername.setText("$dtUsername")
+            binding.updateBioInfo.setText("$dtBioInfo")
+            binding.updatePhoneNo.setText("$dtPhoneNo")
         }
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_update_profile, container, false)
-    }
+        updateDatabaseData(binding)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        updateDatabaseData(view)
-
-        nationalitySpinner = view.findViewById(R.id.nationality_spinner)
+        nationalitySpinner = binding.nationalitySpinner
         val national = resources.getStringArray(R.array.nationality_array)
         val arrayAdapterNational =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, national)
@@ -59,17 +57,24 @@ class UpdateProfileFragment : Fragment() {
 
             }
         }
+
+        // Inflate the layout for this fragment
+        return binding.root
     }
 
-    private fun updateDatabaseData(view: View) {
-        val updateButton = view.findViewById<Button>(R.id.update_info)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun updateDatabaseData(binding: FragmentUpdateProfileBinding) {
+        val updateButton = binding.updateInfo
         val database = FirebaseDatabase.getInstance().getReference("Users")
         updateButton.setOnClickListener {
-            val name = view.findViewById<TextInputEditText>(R.id.update_username).text.toString()
-            val bioInfo = view.findViewById<TextInputEditText>(R.id.update_bioInfo).text.toString()
-            val phoneNumber = view.findViewById<TextInputEditText>(R.id.update_phoneNo).text.toString()
-            val selectedGenderId: Int = view.findViewById<RadioGroup>(R.id.update_radioGroupGender).checkedRadioButtonId
-            val gender = view.findViewById<RadioButton>(selectedGenderId).text
+            val name = binding.updateUsername.text.toString()
+            val bioInfo = binding.updateBioInfo.text.toString()
+            val phoneNumber = binding.updatePhoneNo.text.toString()
+            val selectedGenderId = binding.updateRadioGroupGender.checkedRadioButtonId
+            val gender = binding.root.findViewById<RadioButton>(selectedGenderId).text
 
             // Validation when update
             when {
