@@ -254,6 +254,7 @@ class RegisterActivity : AppCompatActivity() {
         hashMap["profileImage"] = "" //add empty, will do in profile edit
         hashMap["timestamp"] = timestamp
         hashMap["nationality"] = country
+        hashMap["gender"] = ""
         hashMap["phoneNumber"] = phoneNumber
         hashMap["dateOfBirth"] = datePick.trim()
         hashMap["currentPoints"] = 0

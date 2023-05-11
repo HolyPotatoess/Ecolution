@@ -1,58 +1,56 @@
 package my.edu.tarumt.ecolution.userprofile
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.CallSuper
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.core.Context
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 import de.hdodenhof.circleimageview.CircleImageView
 import my.edu.tarumt.ecolution.R
+import my.edu.tarumt.ecolution.databinding.ActivityLoginBinding
+import my.edu.tarumt.ecolution.databinding.FragmentUserProfileBinding
 import my.edu.tarumt.ecolution.login.LoginActivity
-import android.widget.Button
-import android.widget.ImageView
-import androidx.fragment.app.FragmentActivity
 
 class UserProfileFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
-
+    private lateinit var binding: FragmentUserProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = FragmentUserProfileBinding.inflate(layoutInflater)
         Log.d("msg", "loaded")
-        firebaseAuth = FirebaseAuth.getInstance()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    @SuppressLint("DetachAndAttachSameFragment")
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-
-        return inflater.inflate(R.layout.fragment_user_profile, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        val view = inflater.inflate(R.layout.fragment_user_profile, container, false)
+        firebaseAuth = FirebaseAuth.getInstance()
         val updateBttn = view.findViewById<Button>(R.id.update_bttn)
         val updateProfileFragment = UpdateProfileFragment()
-        updateBttn.setOnClickListener{
-            parentFragmentManager.beginTransaction().apply {
-                replace(R.id.fl_wrapper, updateProfileFragment)
-                commit()
-            }
+        val userProfileFragment = UserProfileFragment()
+        updateBttn.setOnClickListener {
+            val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fl_wrapper, updateProfileFragment)
+            transaction.commit()
+
             /*var fc = fragmentManager?.beginTransaction()
             fc?.replace(R.id.navigation_user, updateProfileFragment)
             fc?.commit()*/
@@ -66,6 +64,26 @@ class UserProfileFragment : Fragment() {
         view.findViewById<Button>(R.id.logout_bttn).setOnClickListener{
             startActivity(Intent(this.requireContext(), LoginActivity::class.java))
         }
+
+        // Plan B
+        /*view.findViewById<Button>(R.id.refresh_bttn).setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                remove(userProfileFragment)
+                replace(R.id.fl_wrapper, userProfileFragment)
+                commit()
+            }
+        }*/
+
+        view.findViewById<Button>(R.id.refresh_bttn).setOnClickListener {
+            parentFragmentManager.beginTransaction().
+            detach(this).attach(this).commit()
+        }
+
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
     }
 
@@ -99,7 +117,7 @@ class UserProfileFragment : Fragment() {
         storageRef.child(firebaseAuth.uid!!).downloadUrl.addOnSuccessListener { Uri ->
             val imageUri = Uri.toString()
             val profilePicView = view.findViewById<CircleImageView>(R.id.profile_image)
-            Glide.with(Fragment())
+            Glide.with(this)
                 .load(imageUri)
                 .into(profilePicView)
         }
