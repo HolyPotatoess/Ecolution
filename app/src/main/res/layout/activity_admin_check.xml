@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signup_page"
+    tools:context=".admin.AdminCheckActivity">
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:color/transparent"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_back_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:drawablePadding="10dp"
+        android:text="Admin Tool"
+        android:textColor="#38A57F"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/baseline_construction_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22" />
+
+    <EditText
+        android:id="@+id/company_ecolution_key"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/baseline_vpn_key_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Admin Key"
+        android:inputType="numberPassword"
+        android:minHeight="30dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/company_ecolution_id"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/company_ecolution_id"
+        app:layout_constraintTop_toBottomOf="@+id/company_ecolution_id" />
+
+    <ImageButton
+        android:id="@+id/login_hide_password_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/company_ecolution_key"
+        app:layout_constraintEnd_toEndOf="@+id/company_ecolution_key"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="@+id/company_ecolution_key"
+        app:layout_constraintTop_toTopOf="@+id/company_ecolution_key"
+        app:srcCompat="@drawable/ic_visibility_off" />
+
+    <ImageButton
+        android:id="@+id/login_hide_password_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/company_ecolution_id"
+        app:layout_constraintEnd_toEndOf="@+id/company_ecolution_id"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="@+id/company_ecolution_id"
+        app:layout_constraintTop_toTopOf="@+id/company_ecolution_id"
+        app:srcCompat="@drawable/ic_visibility_off" />
+
+    <EditText
+        android:id="@+id/company_ecolution_id"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/baseline_business_center_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Company ID"
+        android:inputType="numberPassword"
+        android:minHeight="30dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <ImageButton
+        android:id="@+id/login_hide_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/company_ecolution_id"
+        app:layout_constraintEnd_toEndOf="@+id/company_ecolution_id"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="@+id/company_ecolution_id"
+        app:layout_constraintTop_toTopOf="@+id/company_ecolution_id"
+        app:srcCompat="@drawable/ic_visibility_off" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Please Enter Your Company Admin Key"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <Button
+        android:id="@+id/proceed_button"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="sans-serif-light"
+        android:scaleType="centerCrop"
+        android:text="Proceed"
+        android:textStyle="bold"
+        app:backgroundTint="@color/lightBlue"
+        app:layout_constraintEnd_toEndOf="@+id/company_ecolution_key"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/company_ecolution_key"
+        app:layout_constraintTop_toBottomOf="@+id/company_ecolution_key" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

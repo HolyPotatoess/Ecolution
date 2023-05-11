@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import my.edu.tarumt.ecolution.MainMenuActivity
 import my.edu.tarumt.ecolution.R
+import my.edu.tarumt.ecolution.admin.AdminCheckActivity
 import my.edu.tarumt.ecolution.databinding.ActivityLoginBinding
 import my.edu.tarumt.ecolution.register.RegisterActivity
 
@@ -49,6 +50,10 @@ class LoginActivity : AppCompatActivity() {
         }
         binding.loginForgotPassword.setOnClickListener{
             startActivity(Intent(this, ForgetPasswordActivity::class.java))
+        }
+
+        binding.adminCheck.setOnClickListener{
+            startActivity(Intent(this, AdminCheckActivity::class.java))
         }
         //Hide & show Password
         binding.loginHidePassword.tag = 1
