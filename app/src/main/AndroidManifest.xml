@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Ecolution"
         tools:targetApi="31">
         <activity
-            android:name=".AdminToolActivity"
+            android:name=".admin.AdminToolActivity"
             android:exported="false" />
         <activity
             android:name=".admin.AdminCheckActivity"

@@ -109,10 +109,8 @@ class AdminCheckActivity : AppCompatActivity() {
 
                         if (getCompanyKey == companyKey) {
                             // companyKey matches, login admin
-                            confirmSuccess = 1
-                            if(confirmSuccess == 1){
-                                loginAdmin()
-                            }
+                            val intent = Intent(this@AdminCheckActivity, AdminToolActivity::class.java)
+                            startActivity(intent)
 
                         } else {
                             Toast.makeText(this@AdminCheckActivity, "Company Key Not Match", Toast.LENGTH_SHORT).show()
@@ -131,11 +129,6 @@ class AdminCheckActivity : AppCompatActivity() {
         }
     }
 
-    private fun loginAdmin(){
-        val intent = Intent(this@AdminCheckActivity, AdminToolActivity::class.java)
-        startActivity(intent)
-
-    }
 
 
 }
