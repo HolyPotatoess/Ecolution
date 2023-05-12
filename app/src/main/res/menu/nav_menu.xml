@@ -12,7 +12,7 @@
         android:title="@string/title_aboutUs" />
 
     <item
-        android:id="@+id/navigation_reward"
+        android:id="@+id/nav_reward"
         android:icon="@drawable/gift_box_1"
         android:title="@string/title_reward" />
 

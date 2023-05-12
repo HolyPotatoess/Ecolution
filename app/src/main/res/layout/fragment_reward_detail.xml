@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".reward.RewardDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/reward_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reward_name"
+            android:textColor="#307043"
+            android:textSize="26sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/reward_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/description"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reward_name" />
+
+        <TextView
+            android:id="@+id/reward_description_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reward_description"
+            tools:text="@string/description_value" />
+
+        <TextView
+            android:id="@+id/reward_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/valid_duration"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reward_description_value" />
+
+        <TextView
+            android:id="@+id/reward_duration_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reward_duration"
+            tools:text="19-03-2022 - 19-03-2023" />
+
+        <TextView
+            android:id="@+id/point_required"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/points_required"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reward_duration_value" />
+
+        <TextView
+            android:id="@+id/reward_points_required_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/point_required"
+            tools:text="230 pts" />
+
+        <TextView
+            android:id="@+id/t_and_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/t_anc_c"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reward_points_required_value" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t_and_c">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:text="1. " />
+
+                <TextView
+                    android:id="@+id/tc_value1"
+                    android:layout_width="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/t_c_value1" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:text="2. " />
+
+                <TextView
+                    android:id="@+id/tc_value2"
+                    android:layout_width="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/t_c_value2" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:text="3. " />
+
+                <TextView
+                    android:id="@+id/tc_value3"
+                    android:layout_width="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/t_c_value3" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:text="4. " />
+
+                <TextView
+                    android:id="@+id/tc_value4"
+                    android:layout_width="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/t_c_value4" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:text="5. " />
+
+                <TextView
+                    android:id="@+id/tc_value5"
+                    android:layout_width="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/t_c_value5" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/reward_back_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_marginTop="44dp"
+            android:backgroundTint="@color/yellow"
+            android:text="back to reward page"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+        <Button
+            android:id="@+id/claim_reward_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:backgroundTint="@color/green"
+            android:text="Claim This reward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reward_back_button"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

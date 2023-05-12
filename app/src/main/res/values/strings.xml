@@ -38,7 +38,7 @@
 
     <string name="title_ranking">Ranking</string>
     <string name="title_user_profile">User Profile</string>
-    <string name="title_voucher">Voucher</string>
+    <string name="title_Reward">Reward</string>
     <string name="title_reward">Reward</string>
     <string name="title_home">Home</string>
 
@@ -81,4 +81,29 @@
     <string name="user_ranking_point_s">%s th</string>
     <string name="current_ranking_title_s">%s points</string>
     <string name="naviBar_rank_title">Ranking</string>
+    <string name="you_have_collected">You have collected</string>
+    <string name="total_point">0</string>
+    <string name="points">Points</string>
+
+    <!-- reward detail -->
+    <string name="points_required_value">%s pts</string>
+    <string name="points_required">Points to redeem</string>
+    <string name="valid_duration_value">%s to %s</string>
+    <string name="valid_duration">Valid Duration</string>
+    <string name="description">Description</string>
+    <string name="description_value">Description</string>
+    <string name="reward_name">Reward Name</string>
+    <string name="t_c_value1">Rewards are available from %s to %s, for one-time use only.</string>
+    <string name="t_c_value2">Rewards will expire by %s at 11.59pm, no redemption will be honoured after this.</string>
+    <string name="t_c_value3">Redemption valid while stocks last and first come first served basis. Expired Reward is not valid for use unless specified.</string>
+    <string name="t_c_value4">Non-transferable, non-refundable and cannot be exchanged for cash.</string>
+    <string name="t_c_value5">Can only be used in a single transaction.</string>
+
+    <!-- reward list -->
+    <string name="reward_starbucks">Starbucks Buy 1 Free 1</string>
+    <string name="reward_subway">Subway Free Drinks</string>
+    <string name="reward_spotify">Spotify 3 months Premium</string>
+    <string name="reward_grab">Grab RM5 off</string>
+    <string name="reward_milo">Milo 50% off</string>
+    <string name="view_reward_button">View</string>
 </resources>
