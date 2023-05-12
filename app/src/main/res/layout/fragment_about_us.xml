@@ -28,64 +28,24 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
     <TextView
-        android:id="@+id/textViewAboutUsSentence1"
-        android:layout_width="wrap_content"
+        android:id="@+id/textViewAboutUsSentence"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="58dp"
-        android:text="@string/aboutUsSentence1"
+        android:text="@string/aboutUsSentence"
+        android:textAlignment="center"
         android:textColor="@color/main_green"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsTitle" />
-
-    <TextView
-        android:id="@+id/textViewAboutUsSentence2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="56dp"
-        android:text="@string/aboutUsSentence2"
-        android:textColor="@color/main_green"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsSentence1" />
-
-    <TextView
-        android:id="@+id/textViewAboutUsSentence3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="9dp"
-        android:text="@string/aboutUsSentence3"
-        android:textColor="@color/main_green"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsSentence2" />
-
-    <TextView
-        android:id="@+id/textViewAboutUsSentence4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="139dp"
-        android:text="@string/aboutUsSentence4"
-        android:textColor="@color/main_green"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsSentence3" />
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewAboutUsTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsTitle"
+        app:layout_constraintEnd_toEndOf="@+id/textViewAboutUsTitle"/>
 
     <TextView
         android:id="@+id/textViewSocialMedia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="133dp"
         android:layout_marginEnd="266dp"
         android:text="@string/title_SocialMedia"
         android:textColor="@color/main_green"
@@ -93,14 +53,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsSentence4" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAboutUsSentence" />
 
     <ImageButton
         android:id="@+id/imageButtonFacebook"

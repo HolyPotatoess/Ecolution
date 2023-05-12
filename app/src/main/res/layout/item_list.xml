@@ -4,11 +4,11 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/custom_input"
         android:orientation="vertical">
 
 
@@ -25,15 +25,13 @@
             android:layout_height="wrap_content"
             android:text="@string/article1" />
 
-        <Button xmlns:android="http://schemas.android.com/apk/res/android"
+        <Button
             android:id="@+id/button_read_more"
             android:layout_width="140dp"
             android:layout_height="50dp"
             android:layout_marginStart="200dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/custom_button"
-            android:backgroundTint="@color/lightBlue"
-            android:onClick="GetUrlFromIntent"
+            android:backgroundTint="@color/main_green"
             android:padding="8dp"
             android:shadowColor="#000000"
             android:text="@string/read_more" />
