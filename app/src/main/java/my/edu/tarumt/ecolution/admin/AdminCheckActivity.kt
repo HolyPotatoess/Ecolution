@@ -20,9 +20,6 @@ class AdminCheckActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAdminCheckBinding
 
-    //Firebase Auth
-    private lateinit var firebaseAuth: FirebaseAuth
-
     //progress dialog
     private lateinit var progressDialog: ProgressDialog
 
@@ -76,12 +73,11 @@ class AdminCheckActivity : AppCompatActivity() {
             * */
             validateData()
         }
-
     }
 
     private var companyId = ""
     private var companyKey= ""
-    private var confirmSuccess = 0
+
 
     private fun validateData(){
         //1) Input Data
@@ -111,7 +107,7 @@ class AdminCheckActivity : AppCompatActivity() {
                             // companyKey matches, login admin
                             val intent = Intent(this@AdminCheckActivity, AdminToolActivity::class.java)
                             startActivity(intent)
-
+                            Toast.makeText(this@AdminCheckActivity, "Admin Login Successfully", Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(this@AdminCheckActivity, "Company Key Not Match", Toast.LENGTH_SHORT).show()
                         }

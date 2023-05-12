@@ -106,4 +106,9 @@
     <string name="reward_grab">Grab RM5 off</string>
     <string name="reward_milo">Milo 50% off</string>
     <string name="view_reward_button">View</string>
+    <string name="point_in">Point-In</string>
+    <string name="back">Back</string>
+    <string name="user_id">User ID</string>
+    <string name="kg">KG</string>
+    <string name="calculate">Calculate</string>
 </resources>
