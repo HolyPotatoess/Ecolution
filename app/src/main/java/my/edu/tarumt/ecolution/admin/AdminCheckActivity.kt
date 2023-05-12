@@ -1,6 +1,7 @@
 package my.edu.tarumt.ecolution.admin
 
 import android.app.ProgressDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
@@ -8,10 +9,11 @@ import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
+import my.edu.tarumt.ecolution.MainMenuActivity
 import my.edu.tarumt.ecolution.R
 import my.edu.tarumt.ecolution.databinding.ActivityAdminCheckBinding
+import my.edu.tarumt.ecolution.databinding.ActivityLoginBinding
 
 
 class AdminCheckActivity : AppCompatActivity() {
@@ -27,8 +29,9 @@ class AdminCheckActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityAdminCheckBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        supportActionBar?.hide()
         binding.backButton.setOnClickListener{
             onBackPressed()
         }
@@ -78,6 +81,7 @@ class AdminCheckActivity : AppCompatActivity() {
 
     private var companyId = ""
     private var companyKey= ""
+    private var confirmSuccess = 0
 
     private fun validateData(){
         //1) Input Data
@@ -88,14 +92,50 @@ class AdminCheckActivity : AppCompatActivity() {
 
         //2) Validate Data
         if (companyId.isEmpty()){
-            Toast.makeText(this,"Please Enter Your Email", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Please Enter Your Company Id", Toast.LENGTH_SHORT).show()
         }
 
         else if (companyKey.isEmpty()) {
-            Toast.makeText(this,"Please Enter a password", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Please Enter Your Company Key", Toast.LENGTH_SHORT).show()
         }
         else {
-            Toast.makeText(this, "YOU ARE CORRECT NICE!", Toast.LENGTH_SHORT).show()
+            val ref = FirebaseDatabase.getInstance().getReference("AdminTool")
+            ref.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.hasChild(companyId)) {
+                        // Company ID exists
+                        val companySnapshot = snapshot.child(companyId)
+                        val getCompanyKey = companySnapshot.child("companyKey").getValue(String::class.java)
+
+                        if (getCompanyKey == companyKey) {
+                            // companyKey matches, login admin
+                            confirmSuccess = 1
+                            if(confirmSuccess == 1){
+                                loginAdmin()
+                            }
+
+                        } else {
+                            Toast.makeText(this@AdminCheckActivity, "Company Key Not Match", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        // Company ID does not exist
+                        Toast.makeText(this@AdminCheckActivity, "Company ID not found", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Handle error
+                }
+            })
+
         }
     }
+
+    private fun loginAdmin(){
+        val intent = Intent(this@AdminCheckActivity, AdminToolActivity::class.java)
+        startActivity(intent)
+
+    }
+
+
 }

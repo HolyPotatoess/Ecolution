@@ -69,17 +69,7 @@
         app:layout_constraintTop_toTopOf="@+id/company_ecolution_key"
         app:srcCompat="@drawable/ic_visibility_off" />
 
-    <ImageButton
-        android:id="@+id/login_hide_password_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/company_ecolution_id"
-        app:layout_constraintEnd_toEndOf="@+id/company_ecolution_id"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="@+id/company_ecolution_id"
-        app:layout_constraintTop_toTopOf="@+id/company_ecolution_id"
-        app:srcCompat="@drawable/ic_visibility_off" />
+
 
     <EditText
         android:id="@+id/company_ecolution_id"
@@ -100,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <ImageButton
-        android:id="@+id/login_hide_password"
+        android:id="@+id/login_hide_password_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
