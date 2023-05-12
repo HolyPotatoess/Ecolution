@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="website">
+        <item>https://www.thesca.org/connect/blog/how-recycle-and-why-you-should-do-it/</item>
+        <item>https://www.conserve-energy-future.com/importance_of_recycling.php</item>
+        <item>https://kids.niehs.nih.gov/topics/reduce/index.htm</item>
+        <item>https://waysto.digital/seven-ways-to-improve-your-recycling-habits/</item>
+        <item>https://socialdhara.com/importance-of-environment-to-human-life/</item>
+    </string-array>
+
+    //article headline as string array
+    <string-array name="article_headline">
+        <item>The recycling rate in the United States has increased from less than 7% in 1960 to over 34% in 2015. While the progress is promising, we still have a long way to go...</item>
+        <item>Recycling is important in today’s world if we want to leave this planet for our future generations. It is good for the environment...</item>
+        <item>Reduce, Reuse, Recycle — Three great ways YOU can eliminate waste and protect your environment! The environment is everything around you including the air, plants,...</item>
+        <item>Seven ways to improve your recycling habits 1. Use less plastic. One of the easiest ways to use less plastic includes having a personal zero ...</item>
+        <item>The environment consists of all things-living or nonliving that influence human life. It plays a vital role in the functioning of our daily lives... </item>
+    </string-array>
+</resources>

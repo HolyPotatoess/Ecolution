@@ -45,10 +45,9 @@
     <!-- About Us -->
     <string name="title_aboutUs">About Us</string>
     <string name="aboutUs_WWD">What We do</string>
-    <string name="aboutUsSentence1">Increase awareness of our community</string>
-    <string name="aboutUsSentence2">Promote conversation of Mother Earth</string>
-    <string name="aboutUsSentence3">Convey severity of destroying our ecosystem</string>
-    <string name="aboutUsSentence4">Spread the beauty of nature</string>
+    <string name="aboutUsSentence">At Ecolution, we dedicated to increasing community awareness, promoting Mother Earth\'s conservation,
+        conveying the severity of ecosystem destruction,
+        and spreading nature\'s beauty. Join us in preserving and protecting for a sustainable future.</string>
     <string name="title_SocialMedia">Social Media</string>
     <string name="socialMedia_facebook">\u0040Ecolution</string>
     <string name="socialMedia_tiktok">\u0040Ecolution3R</string>
@@ -56,7 +55,11 @@
 
     <!-- Article -->
     <string name="read_more">Read More...</string>
-    <string name="article1">Haze is traditionally an atmospheric phenomenon in which dust, smoke, and other dry particulates obscure the clarity of the sky. The World Meteorological Organization...</string>
+    <string name="article1">The recycling rate in the United States has increased from less than 7% in 1960 to over 34% in 2015. While the progress is promising, we still have a long way to go...</string>
+    <string name="article2">Recycling is important in today’s world if we want to leave this planet for our future generations. It is good for the environment...</string>
+    <string name="article3">Reduce, Reuse, Recycle — Three great ways YOU can eliminate waste and protect your environment! The environment is everything around you including the air, plants,...</string>
+    <string name="article4">Seven ways to improve your recycling habits 1. Use less plastic. One of the easiest ways to use less plastic includes having a personal zero ...</string>
+    <string name="article5">The environment consists of all things-living or nonliving that influence human life. It plays a vital role in the functioning of our daily lives... </string>
 
     <!-- Update Profile -->
     <string name="update_bttn_title2">Update Your Profile Info</string>
