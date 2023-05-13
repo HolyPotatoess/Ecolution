@@ -40,15 +40,15 @@
                         android:background="@drawable/custom_input"
                         android:orientation="vertical">
                         <LinearLayout
-                            android:layout_width="200dp"
+                            android:layout_width="250dp"
                             android:layout_height="130dp"
                             android:orientation="horizontal"
                             android:layout_gravity="center"
-                            android:layout_marginStart="20dp"
+                            android:layout_marginStart="40dp"
                             android:weightSum="1">
                             <de.hdodenhof.circleimageview.CircleImageView
                                 android:id="@+id/profile_image"
-                                android:layout_weight="0.85"
+                                android:layout_weight="0.8"
                                 android:layout_width="0dp"
                                 android:layout_height="110dp"
                                 android:layout_marginTop="20dp"
@@ -63,6 +63,18 @@
                                 android:background="@drawable/ic_baseline_edit_24"
                                 android:backgroundTint="@color/main_green"
                                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                            <ImageButton
+                                android:id="@+id/imageButtonQrcode"
+                                android:layout_marginTop="5dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@null"
+                                android:contentDescription="QrCode Button"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/baseline_qr_code_24">
+
+                            </ImageButton>
                         </LinearLayout>
 
                         <LinearLayout

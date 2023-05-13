@@ -43,6 +43,7 @@ class UserProfileFragment : Fragment() {
         firebaseAuth = FirebaseAuth.getInstance()
         val updateProfileFragment = UpdateProfileFragment()
         val userProfileFragment = UserProfileFragment()
+        val userQrCodeFragment = UserQrCodeFragment()
         binding.updateBttn.setOnClickListener {
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.fl_wrapper, updateProfileFragment)
@@ -67,6 +68,14 @@ class UserProfileFragment : Fragment() {
             parentFragmentManager.beginTransaction().apply {
                 remove(userProfileFragment)
                 replace(R.id.fl_wrapper, userProfileFragment)
+                commit()
+            }
+        }
+
+        binding.imageButtonQrcode.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                remove(userProfileFragment)
+                replace(R.id.fl_wrapper, userQrCodeFragment)
                 commit()
             }
         }

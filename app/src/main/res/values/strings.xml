@@ -114,4 +114,6 @@
     <string name="user_id">User ID</string>
     <string name="kg">KG</string>
     <string name="calculate">Calculate</string>
+    <string name="user_id_title">User ID</string>
+    <string name="user_id_value">id</string>
 </resources>
