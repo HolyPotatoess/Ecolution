@@ -96,6 +96,11 @@ class AdminToolActivity : AppCompatActivity() {
         //more than 10 kg bonus
         if(weight.toDouble() > 10){
             totalPoint *= bonusRate
+            binding.bonus.text = String.format("Bonus 5%")
+        }
+
+        else if(weight.toDouble() <= 10){
+            binding.bonus.text = String.format("Bonus 0%")
         }
         totalPoint = kotlin.math.ceil(totalPoint)
         binding.showWeightAmount.text = String.format("%s KG", weight)

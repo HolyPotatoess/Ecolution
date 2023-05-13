@@ -190,13 +190,13 @@
         app:srcCompat="@drawable/baseline_help_24" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/bonus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
-        android:text="Bonus 10%"
+        android:text="Bonus 0%"
         android:textAlignment="center"
-        android:textSize="12sp"
+        android:textSize="16sp"
         android:fontFamily="sans-serif-light"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
