@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.zxing.integration.android.IntentIntegrator
+import com.google.zxing.integration.android.IntentResult
 import my.edu.tarumt.ecolution.databinding.ActivityAdminToolBinding
 
 
@@ -63,30 +64,28 @@ class AdminToolActivity : AppCompatActivity() {
             validateData()
         }
 
-        binding.qrCode.setOnClickListener{
+        binding.qrCode.setOnClickListener {
             val scanner = IntentIntegrator(this)
             scanner.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
             scanner.setBeepEnabled(true)
             scanner.initiateScan()
 
         }
-
     }
 
-    fun OnActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (resultCode == Activity.RESULT_OK) {
-            val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-            if (result != null) {
-                if (result.contents == null) {
-                    Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
-                } else {
-                    Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
-                }
-            } else {
-                super.onActivityResult(requestCode, resultCode, data)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == IntentIntegrator.REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            val result: IntentResult? = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+            result?.contents?.let {
+                Toast.makeText(this, "Scanned: $it", Toast.LENGTH_LONG).show()
+            } ?: run {
+                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
             }
         }
     }
+
 
     private fun validateData(){
         weight = binding.recycleWeight.text.toString().trim()
