@@ -1,5 +1,6 @@
 package my.edu.tarumt.ecolution.admin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
@@ -63,6 +64,10 @@ class AdminToolActivity : AppCompatActivity() {
             validateData()
         }
 
+        binding.qrCode.setOnClickListener{
+            startActivity(Intent(this, AdminToolActivity::class.java))
+        }
+
     }
 
     private fun validateData(){
@@ -105,6 +110,7 @@ class AdminToolActivity : AppCompatActivity() {
         totalPoint = kotlin.math.ceil(totalPoint)
         binding.showWeightAmount.text = String.format("%s KG", weight)
         binding.showPointAmount.text = "$totalPoint .p"
+
 
     }
 
