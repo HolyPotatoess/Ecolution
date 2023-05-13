@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:text="@string/user_id_value"
         android:textColor="@color/main_green"
+        android:background="@drawable/custom_input"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,5 +46,15 @@
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/qr_back_btn"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:text="Back to User Page"
+        app:layout_constraintEnd_toEndOf="@+id/userId_value"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/userId_value" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

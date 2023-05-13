@@ -31,6 +31,11 @@ class UserQrCodeFragment : Fragment() {
         firebaseAuth = FirebaseAuth.getInstance()
         getDatabaseData(binding)
         generateQr(binding)
+
+        binding.qrBackBtn.setOnClickListener {
+            parentFragmentManager.beginTransaction().remove(this).commit()
+        }
+
         return binding.root
     }
     private fun getDatabaseData(binding: FragmentUserQrCodeBinding){
