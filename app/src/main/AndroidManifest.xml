@@ -14,7 +14,11 @@
         android:theme="@style/Theme.Ecolution"
         tools:targetApi="31">
         <activity
-            android:name=".QRCodeActivity"
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
+        <activity
+            android:name=".admin.QRCodeActivity"
             android:exported="false" />
         <activity
             android:name=".admin.AdminToolActivity"

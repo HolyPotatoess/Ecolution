@@ -1,18 +1,17 @@
 package my.edu.tarumt.ecolution.admin
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import my.edu.tarumt.ecolution.R
-import my.edu.tarumt.ecolution.databinding.ActivityAdminCheckBinding
+import com.google.zxing.integration.android.IntentIntegrator
 import my.edu.tarumt.ecolution.databinding.ActivityAdminToolBinding
-import java.lang.Math.ceil
+
 
 class AdminToolActivity : AppCompatActivity() {
 
@@ -65,9 +64,28 @@ class AdminToolActivity : AppCompatActivity() {
         }
 
         binding.qrCode.setOnClickListener{
-            startActivity(Intent(this, AdminToolActivity::class.java))
+            val scanner = IntentIntegrator(this)
+            scanner.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
+            scanner.setBeepEnabled(true)
+            scanner.initiateScan()
+
         }
 
+    }
+
+    fun OnActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == Activity.RESULT_OK) {
+            val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+            if (result != null) {
+                if (result.contents == null) {
+                    Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
+                }
+            } else {
+                super.onActivityResult(requestCode, resultCode, data)
+            }
+        }
     }
 
     private fun validateData(){
@@ -101,11 +119,11 @@ class AdminToolActivity : AppCompatActivity() {
         //more than 10 kg bonus
         if(weight.toDouble() > 10){
             totalPoint *= bonusRate
-            binding.bonus.text = String.format("Bonus 5%")
+            binding.bonus.text = "Bonus 5%"
         }
 
         else if(weight.toDouble() <= 10){
-            binding.bonus.text = String.format("Bonus 0%")
+            binding.bonus.text = "Bonus 0%"
         }
         totalPoint = kotlin.math.ceil(totalPoint)
         binding.showWeightAmount.text = String.format("%s KG", weight)
