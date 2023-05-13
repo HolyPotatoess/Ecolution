@@ -427,7 +427,7 @@
                             android:id="@+id/update_bttn"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
-                            android:backgroundTint="@color/main_green"
+                            android:backgroundTint="@color/green_500"
                             android:text="@string/edit_profile_bttn"
                             android:textColor="@color/white" />
                     </LinearLayout>
@@ -459,7 +459,7 @@
                                 android:layout_height="40dp"
                                 android:text="Logout"
                                 android:textSize="10sp"
-                                android:backgroundTint="@color/main_green"
+                                android:backgroundTint="@color/green_500"
                                 app:layout_constraintStart_toStartOf="@id/fl_wrapper"
                                 tools:ignore="SmallSp,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -473,7 +473,7 @@
 
                             <Button
                                 android:id="@+id/refresh_bttn"
-                                android:backgroundTint="@color/main_green"
+                                android:backgroundTint="@color/green_500"
                                 android:layout_width="120dp"
                                 android:layout_height="40dp"
                                 android:text="Refresh Page"

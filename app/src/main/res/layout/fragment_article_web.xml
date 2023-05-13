@@ -13,6 +13,7 @@
             android:layout_height="match_parent"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
+            android:layout_marginBottom="30dp"
             android:layout_marginTop="5dp">
 
             <WebView
@@ -28,7 +29,7 @@
                 android:id="@+id/article_backbtn"
                 android:layout_width="250dp"
                 android:layout_height="48dp"
-                android:backgroundTint="@color/main_green"
+                android:backgroundTint="@color/green_500"
                 android:text="Back to Home Page"
                 app:layout_constraintEnd_toEndOf="@+id/webview_article"
                 app:layout_constraintStart_toStartOf="@+id/webview_article"

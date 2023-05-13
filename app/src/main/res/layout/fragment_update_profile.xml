@@ -153,7 +153,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/main_green"
+                android:backgroundTint="@color/green_500"
                 android:text="Update Information"
                 android:textColor="@color/white">
 
