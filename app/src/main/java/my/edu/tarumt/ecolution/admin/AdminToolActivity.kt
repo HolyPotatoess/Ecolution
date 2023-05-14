@@ -85,14 +85,14 @@ class AdminToolActivity : AppCompatActivity() {
             info.setTitle("Info")
                 .setMessage(String.format("Paper : $paperWeightRate per (kg)" +
                         "\nPlastic : $plasticWeightRate per (kg)" +
-                        "\nTin : ${tinWeightRate}WeightRate per (kg)" +
+                        "\nTin : $tinWeightRate per (kg)" +
                         "\nGlass : $plasticWeightRate per (kg)\n"))
                 .setCancelable(true)
                 .setPositiveButton("Okay"){info, which ->
 
                 }
             //show alert dialog
-            val dialoginfo = builder.create()
+            val dialoginfo = info.create()
             dialoginfo.show()
         }
 
@@ -143,7 +143,6 @@ class AdminToolActivity : AppCompatActivity() {
 
         }else if(recycleItem == "Tin"){
             totalPoint = weight.toDouble() * tinWeightRate
-
         }
         else if(recycleItem == "Paper"){
             totalPoint = weight.toDouble() * paperWeightRate
