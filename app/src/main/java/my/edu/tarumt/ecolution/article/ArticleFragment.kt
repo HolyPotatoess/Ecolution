@@ -24,7 +24,7 @@ class ArticleFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         firebaseAuth = FirebaseAuth.getInstance()
-        loadUserInfo()
+
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +32,7 @@ class ArticleFragment : Fragment() {
     ): View {
         binding = FragmentArticleBinding.inflate(inflater, container, false)
         recyclerView = binding.recyclerview
-
+        loadUserInfo()
         return binding.root
     }
 

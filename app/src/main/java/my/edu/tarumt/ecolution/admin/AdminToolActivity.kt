@@ -22,18 +22,18 @@ import my.edu.tarumt.ecolution.databinding.ActivityAdminToolBinding
 class AdminToolActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAdminToolBinding
-    val recycleType = arrayOf("Plastic", "Tin", "Paper")
+    val recycleType = arrayOf("Plastic", "Tin", "Paper","Glass")
 
 
     private var recycleItem = ""
     private var weight = ""
-    private var plasticWeightRate = 10.0
-    private var tinWeightRate = 15.0
-    private var paperWeightRate = 12.0
-    private var bonusRate = 1.05
+    private var plasticWeightRate = 14.0
+    private var tinWeightRate = 20.0
+    private var paperWeightRate = 16.0
+    private var glassWeightRate = 18.0
+    private var bonusRate10Kg = 1.05
     private var totalPoint = 0.0
     private var userIdScan = ""
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -80,8 +80,20 @@ class AdminToolActivity : AppCompatActivity() {
             scanner.initiateScan()
 
         }
-        binding.pointIn.setOnClickListener{
-            validateData()
+        binding.helpInfo.setOnClickListener{
+            val info = AlertDialog.Builder(this)
+            info.setTitle("Info")
+                .setMessage(String.format("Paper : $paperWeightRate per (kg)" +
+                        "\nPlastic : $plasticWeightRate per (kg)" +
+                        "\nTin : ${tinWeightRate}WeightRate per (kg)" +
+                        "\nGlass : $plasticWeightRate per (kg)\n"))
+                .setCancelable(true)
+                .setPositiveButton("Okay"){info, which ->
+
+                }
+            //show alert dialog
+            val dialoginfo = builder.create()
+            dialoginfo.show()
         }
 
         binding.pointIn.setOnClickListener{
@@ -135,11 +147,14 @@ class AdminToolActivity : AppCompatActivity() {
         }
         else if(recycleItem == "Paper"){
             totalPoint = weight.toDouble() * paperWeightRate
+        }
+        else if(recycleItem == "Glass"){
+            totalPoint = weight.toDouble() * glassWeightRate
 
         }
         //more than 10 kg bonus
         if(weight.toDouble() > 10){
-            totalPoint *= bonusRate
+            totalPoint *= bonusRate10Kg
             binding.bonus.text = "Bonus 5%"
         }
 
@@ -176,19 +191,33 @@ class AdminToolActivity : AppCompatActivity() {
                 //get user info
                 if(snapshot.hasChild(userIdScan)){
 
-                    val point = "${snapshot.child(userIdScan).child("currentPoints").value}"
-                    val totalPoints ="${snapshot.child(userIdScan).child("totalPoints").value}"
-                    val newCurrentPoint = point.toInt() + totalPoint.toInt()
-                    val newTotalPoint = totalPoints.toInt() + totalPoint.toInt()
+                    val builderConfirm = AlertDialog.Builder(this@AdminToolActivity)
+                    builderConfirm.setTitle("Confirmation")
+                        .setMessage("confirm add " + totalPoint.toInt() + " points to " + snapshot.child(userIdScan).child("name").value + " ?")
+                        .setCancelable(true)
+                        .setPositiveButton("Confirm"){dialogConfirm, it ->
 
-                    val hashMap = HashMap<String, Any>()
-                    hashMap["currentPoints"] = newCurrentPoint
-                    hashMap["totalPoints"] = newTotalPoint
+                            val point = "${snapshot.child(userIdScan).child("currentPoints").value}"
+                            val totalPoints ="${snapshot.child(userIdScan).child("totalPoints").value}"
+                            val newCurrentPoint = point.toInt() + totalPoint.toInt()
+                            val newTotalPoint = totalPoints.toInt() + totalPoint.toInt()
 
-                    val dbRef = FirebaseDatabase.getInstance().getReference("Users")
-                    dbRef.child(userIdScan)
-                        .updateChildren(hashMap)
-                    Toast.makeText(this@AdminToolActivity, "Point Added Successfully", Toast.LENGTH_SHORT).show()
+                            val hashMap = HashMap<String, Any>()
+                            hashMap["currentPoints"] = newCurrentPoint
+                            hashMap["totalPoints"] = newTotalPoint
+
+                            val dbRef = FirebaseDatabase.getInstance().getReference("Users")
+                            dbRef.child(userIdScan)
+                                .updateChildren(hashMap)
+                            Toast.makeText(this@AdminToolActivity, "Point Added Successfully", Toast.LENGTH_SHORT).show()
+                        }
+                        .setNegativeButton("No"){dialogConfirm, it ->
+                            dialogConfirm.cancel()
+                        }
+                    val dialogConfirm = builderConfirm.create()
+                    dialogConfirm.show()
+                    //show alert dialog
+
                 }else {
                     // user ID does not exist
                     Toast.makeText(this@AdminToolActivity, "User ID not found", Toast.LENGTH_SHORT).show()

@@ -42,8 +42,9 @@
 
     <EditText
         android:id="@+id/signup_username"
-        android:layout_width="220dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/ic_user"
         android:drawablePadding="4dp"
@@ -52,76 +53,19 @@
         android:inputType="textPersonName"
         android:minHeight="30dp"
         android:padding="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/signup_password"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="22dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/ic_lock"
-        android:drawablePadding="4dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:minHeight="30dp"
-        android:padding="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/signup_email"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/signup_email"
-        app:layout_constraintTop_toBottomOf="@+id/signup_email"
-        tools:ignore="TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/signup_password_confirm"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="22dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/ic_lock"
-        android:drawablePadding="4dp"
-        android:ems="10"
-        android:hint="@string/confirm_password"
-        android:inputType="textPassword"
-        android:minHeight="30dp"
-        android:padding="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/signup_password"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/signup_password"
-        app:layout_constraintTop_toBottomOf="@+id/signup_password"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/signup_email"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="22dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/ic_email"
-        android:drawablePadding="4dp"
-        android:ems="10"
-        android:hint="@string/email_address"
-        android:inputType="textEmailAddress"
-        android:minHeight="30dp"
-        android:padding="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/signup_username"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/signup_username"
-        app:layout_constraintTop_toBottomOf="@+id/signup_username"
-        tools:ignore="TouchTargetSizeCheck" />
 
     <Spinner
         android:id="@+id/signup_nationality"
-        android:layout_width="220dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/custom_input_spinner"
         android:contentDescription="Spinner"
         android:ems="10"
@@ -136,30 +80,11 @@
         app:layout_constraintTop_toBottomOf="@+id/signup_password_confirm"
         tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/signup_phone_number"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="22dp"
-        android:background="@drawable/custom_input"
-        android:drawableLeft="@drawable/ic_phone"
-        android:drawablePadding="4dp"
-        android:ems="10"
-        android:hint="@string/phone_number"
-        android:inputType="phone"
-        android:minHeight="30dp"
-        android:padding="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/signup_nationality"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/signup_nationality"
-        app:layout_constraintTop_toBottomOf="@+id/signup_nationality"
-        tools:ignore="TouchTargetSizeCheck" />
-
     <TextView
         android:id="@+id/date_of_birth"
-        android:layout_width="220dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/custom_input"
         android:drawableLeft="@drawable/ic_cake"
         android:drawablePadding="4dp"
@@ -179,39 +104,56 @@
         android:id="@+id/signup_confirm"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginTop="80dp"
+
         android:background="@drawable/custom_button"
         android:text="@string/confirm"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:backgroundTint="@color/lightBlue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_of_birth" />
 
-    <ImageButton
-        android:id="@+id/signup_hide_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/signup_password"
+    <EditText
+        android:id="@+id/signup_email"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="4dp"
+        android:ems="10"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"
+        android:minHeight="30dp"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/signup_username"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/signup_username"
+        app:layout_constraintTop_toBottomOf="@+id/signup_username"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/signup_password_confirm"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="4dp"
+        android:ems="10"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        android:minHeight="30dp"
+        android:padding="4dp"
         app:layout_constraintEnd_toEndOf="@+id/signup_password"
-        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/signup_password"
-        app:layout_constraintTop_toTopOf="@+id/signup_password"
-        app:srcCompat="@drawable/ic_visibility_off" />
+        app:layout_constraintTop_toBottomOf="@+id/signup_password"
+        tools:ignore="TouchTargetSizeCheck" />
 
-    <ImageButton
-        android:id="@+id/signup_hide_password_confirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/agree_with"
-        app:layout_constraintBottom_toBottomOf="@+id/signup_password_confirm"
-        app:layout_constraintEnd_toEndOf="@+id/signup_password_confirm"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="@+id/signup_password_confirm"
-        app:layout_constraintTop_toTopOf="@+id/signup_password_confirm"
-        app:srcCompat="@drawable/ic_visibility_off" />
+
 
     <ImageView
         android:id="@+id/imageView2"
@@ -224,12 +166,30 @@
         app:layout_constraintTop_toTopOf="@+id/signup_nationality"
         app:srcCompat="@drawable/ic_flag" />
 
+    <EditText
+        android:id="@+id/signup_phone_number"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/ic_phone"
+        android:drawablePadding="4dp"
+        android:ems="10"
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        android:minHeight="30dp"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/signup_nationality"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/signup_nationality"
+        app:layout_constraintTop_toBottomOf="@+id/signup_nationality"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/term_condition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/terms_and_conditions"
@@ -237,9 +197,9 @@
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="@+id/signup_radio_button"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/signup_radio_button"
         app:layout_constraintTop_toTopOf="@+id/signup_radio_button"
-        app:layout_constraintVertical_bias="0.541">
+        app:layout_constraintVertical_bias="0.6">
 
     </TextView>
 
@@ -247,19 +207,62 @@
         android:id="@+id/signup_radio_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/agree_with"
         android:textColor="#A9A9A9"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/signup_confirm"
-        app:layout_constraintEnd_toStartOf="@+id/term_condition"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintEnd_toEndOf="@+id/date_of_birth"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/date_of_birth"
+        app:layout_constraintTop_toBottomOf="@+id/date_of_birth">
 
     </CheckBox>
+
+    <EditText
+        android:id="@+id/signup_password"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="4dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:minHeight="30dp"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/signup_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/signup_email"
+        app:layout_constraintTop_toBottomOf="@+id/signup_email"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/signup_hide_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/signup_password"
+        app:layout_constraintEnd_toEndOf="@+id/signup_password"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="@+id/signup_password"
+        app:layout_constraintTop_toTopOf="@+id/signup_password"
+        app:srcCompat="@drawable/ic_visibility_off" />
+
+    <ImageButton
+        android:id="@+id/signup_hide_password_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/agree_with"
+        app:layout_constraintBottom_toBottomOf="@+id/signup_password_confirm"
+        app:layout_constraintEnd_toEndOf="@+id/signup_password_confirm"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="@+id/signup_password_confirm"
+        app:layout_constraintTop_toTopOf="@+id/signup_password_confirm"
+        app:srcCompat="@drawable/ic_visibility_off" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
