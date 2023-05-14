@@ -215,10 +215,11 @@
 
                                 <TextView
                                     android:id="@+id/profile_email"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="200dp"
+                                    android:layout_height="25dp"
                                     android:layout_marginStart="5dp"
                                     android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
                                     android:textColor="#0D6025"
                                     android:textSize="18sp" />
 
